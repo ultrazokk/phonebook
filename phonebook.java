@@ -12,5 +12,17 @@ public class PhoneBook {
         phoneBook.get(name).add(phone);
     }
 
-    public List<String> getContacts(String name)
+    public List<String> getContacts(String name) {
+        return phoneBook.getOrDefault(name, Collections.emptyList());
+    }
+
+    public int getContactCount(String name) {
+        return getContacts(name).size();
+    }
+
+    public static void main(String[] args) {
+        PhoneBook phoneBook = new PhoneBook();
+    }
+
+
 }
