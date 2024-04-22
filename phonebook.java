@@ -22,7 +22,19 @@ public class PhoneBook {
 
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
+
+        phoneBook.addContact("Анна", "123456");
+        phoneBook.addContact("Анна", "654321");
+        phoneBook.addContact("Вова", "987456");
+        phoneBook.addContact("Миша", "654987");
+        phoneBook.addContact("Миша", "876534");
+
+        System.out.println("Контакты Анны: " + phoneBook.getContactCount("Анна"));
+        System.out.println("Контакты Вовы: " + phoneBook.getContactCount("Вова"));
+        System.out.println("Контакты Мишы: " + phoneBook.getContactCount("Миша"));
+
+        for (Map.Entry<String, List<String>> entry : phoneBook.phoneBook.entrySet()) {
+            System.out.printf("%s: %s\n", entry.getKey(), entry.getValue());
+        }
     }
-
-
 }
